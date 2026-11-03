@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desde los objetos — Isabel Ridruejo Tuñón</title>
+<meta name="description" content="Desde los objetos. Domesticidad mínima japonesa entre 2001-2024. Trabajo Fin de Grado de Isabel Ridruejo Tuñón, ETSAM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+  <canvas id="gl" aria-label="Cuaderno «Desde los objetos». Pulsa en la página derecha para avanzar y en la izquierda para retroceder."></canvas>
+
+  <header class="top">
+    <div class="id">
+      <span class="name">Isabel Ridruejo Tuñón</span>
+      <span class="sub">Trabajo Fin de Grado · ETSAM</span>
+    </div>
+    <div class="tools">
+      <div class="zoom" role="group" aria-label="Ampliar">
+        <button type="button" id="zoomOut" aria-label="Reducir">−</button>
+        <button type="button" id="zoomReset" class="reset" hidden>Ver entero</button>
+        <button type="button" id="zoomIn" aria-label="Ampliar">+</button>
+      </div>
+      <div class="views" role="group" aria-label="Vista">
+        <button type="button" data-view="top" aria-pressed="true">Cenital</button>
+        <button type="button" data-view="iso" aria-pressed="false">Perspectiva</button>
+      </div>
+    </div>
+  </header>
+
+  <button class="turn prev" id="prev" type="button" aria-label="Página anterior">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <button class="turn next" id="next" type="button" aria-label="Página siguiente">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+
+  <section class="info">
+    <h1>“Desde los objetos. Domesticidad mínima japonesa entre 2001-2024”</h1>
+    <p>Autora: Isabel Ridruejo Tuñón</p>
+    <p>Escuela Técnica Superior de Arquitectura de Madrid, UPM · 2025</p>
+  </section>
+
+  <footer class="nav">
+    <div class="where">
+      <span id="pages">Portada</span>
+    </div>
+    <div class="track">
+      <input id="scrub" type="range" min="0" value="0" step="1" aria-label="Ir a una página">
+      <output id="tip" class="tip"></output>
+    </div>
+  </footer>
+
+  <p class="hint" id="hint">Pulsa la página para pasarla · rueda del ratón o + para ampliar y leer</p>
+  <div class="loading" id="loading">Cargando cuaderno…</div>
+
+  <script type="module" src="book.js"></script>
+</body>
+</html>
