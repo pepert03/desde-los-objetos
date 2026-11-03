@@ -7,18 +7,18 @@ Visor 3D del Trabajo Fin de Grado *«Desde los objetos. Domesticidad mínima jap
 La web necesita un servidor (abrir `index.html` con doble clic no funciona):
 
 ```bash
-python -m http.server 4817 --bind 127.0.0.1 --directory web
+python -m http.server 4817 --bind 127.0.0.1 --directory docs
 ```
 
 y abrir <http://127.0.0.1:4817>.
 
-La carpeta `web/` es estática: se puede publicar tal cual en GitHub Pages, Cloudflare Pages o Netlify.
+La carpeta `docs/` es estática y se publica en GitHub Pages desde la rama `main` (carpeta `/docs`): <https://pepert03.github.io/desde-los-objetos/>
 
 ## Regenerar las imágenes de las páginas
 
 Con el PDF del TFG en la raíz del proyecto:
 
 ```bash
-python tools/render_pages.py        # web/img/a  (resolución normal)
-python tools/render_pages.py --hd   # web/img/h  (alta resolución, para ampliar)
+python tools/render_pages.py        # docs/img/a  (resolución normal)
+python tools/render_pages.py --hd   # docs/img/h  (alta resolución, para ampliar)
 ```

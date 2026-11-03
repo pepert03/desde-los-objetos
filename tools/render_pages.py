@@ -3,8 +3,8 @@
 Cada página se guarda con el blanco convertido en transparencia (la tinta lleva
 alfa), para poder componerla sobre papel normal o papel cebolla en la web.
 
-    python tools/render_pages.py            -> web/img/a/  (130 ppp, vista general)
-    python tools/render_pages.py --hd       -> web/img/h/  (230 ppp, para ampliar)
+    python tools/render_pages.py            -> docs/img/a/  (130 ppp, vista general)
+    python tools/render_pages.py --hd       -> docs/img/h/  (230 ppp, para ampliar)
 
 Nombres: p01 = portada; pNN-L / pNN-R = mitad izquierda / derecha del pliego NN.
 """
@@ -22,7 +22,7 @@ QUALITY = 86 if HD else 82
 
 root = Path(__file__).resolve().parent.parent
 pdf_path = root / "TFG_Ene25_Ridruejo_Tunon_Isabel (1).pdf"
-out = root / "web" / "img" / ("h" if HD else "a")
+out = root / "docs" / "img" / ("h" if HD else "a")
 out.mkdir(parents=True, exist_ok=True)
 
 
